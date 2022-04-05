@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.datashake.com/api/v2/profiles/info?job_id=346998013
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 07 Apr 2022 08:28:22 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"2e288d7a4ab89ff80dc573f3d0a42de8"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 4afb344a92f0f8f551af3b92e8040607
+      x-runtime:
+      - '0.016543'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"status":200,"job_id":346998013,"source_url":"https://www.amazon.com/dp/B003YH9MMI","source_name":"amazon","place_id":null,"external_identifier":null,"meta_data":"{\"star_ratings\":{\"1star\":\"1%\",\"2star\":\"4%\",\"3star\":\"7%\",\"4star\":\"27%\",\"5star\":\"61%\"}}","unique_id":null,"review_count":214,"average_rating":4.4,"last_crawl":"2022-04-05","crawl_status":"complete","percentage_complete":100,"result_count":130,"credits_used":138,"from_date":null,"blocks":null}'
+  recorded_at: Thu, 07 Apr 2022 08:28:22 GMT
+recorded_with: VCR 6.1.0

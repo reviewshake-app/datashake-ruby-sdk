@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.datashake.com/api/v2/profiles/add?query=I-80+Towing+%26+Service%2C+1209+S+3rd+St%2C+Laramie%2C+WY+82070%2C+USA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Tue, 05 Apr 2022 11:17:59 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"7be9c6dad9f31a817d303bff68241343"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - e766d748-6f3c-41d3-af07-1efaaa033c52
+      x-runtime:
+      - '0.078838'
+      x-powered-by:
+      - cloud66
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"job_id":44124,"status":200,"message":"Added this profile
+        to the queue..."}'
+  recorded_at: Tue, 05 Apr 2022 11:17:59 GMT
+recorded_with: VCR 6.1.0

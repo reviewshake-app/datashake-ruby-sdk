@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.datashake.com/api/v2/profiles/add?url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB003YH9MMI
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Tue, 05 Apr 2022 11:21:00 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"f903f97a93966ab5bc6ab13aabf39522"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - e52d0bfb-f09e-4e54-9fc6-e67c18dd806e
+      x-runtime:
+      - '0.006991'
+      x-powered-by:
+      - cloud66
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"status":401,"message":"Invalid spiderman-token"}'
+  recorded_at: Tue, 05 Apr 2022 11:21:00 GMT
+recorded_with: VCR 6.1.0

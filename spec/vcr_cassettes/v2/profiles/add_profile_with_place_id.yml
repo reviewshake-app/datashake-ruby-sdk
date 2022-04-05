@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.datashake.com/api/v2/profiles/add?place_id=ChIJr5dFzfKAhYARj99B34yuZOw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      server:
+      - nginx
+      date:
+      - Tue, 05 Apr 2022 11:23:34 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"b05b6a82f207ef2e6b6c15de9cb48b33"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 6f131aac-5163-4db3-9850-34da2b6d17bb
+      x-runtime:
+      - '0.079759'
+      x-powered-by:
+      - cloud66
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"job_id":44125,"status":200,"message":"Added this profile
+        to the queue..."}'
+  recorded_at: Tue, 05 Apr 2022 11:23:34 GMT
+recorded_with: VCR 6.1.0

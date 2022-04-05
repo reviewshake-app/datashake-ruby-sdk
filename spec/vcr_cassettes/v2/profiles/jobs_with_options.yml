@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.datashake.com/api/v2/profiles/jobs?crawl_status=complete&from_created_at=2022-01-01&page=2&per_page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 07 Apr 2022 08:09:30 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"2dd91d117b1e0504e11949d8fe13e749"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 985673210260d9d89dda086c795fc01c
+      x-runtime:
+      - '0.018044'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"jobs":[{"job_id":346998013,"url":"https://www.amazon.com/dp/B003YH9MMI","place_id":null,"status":"complete","last_crawl":"2022-04-05","from_date":null,"blocks":null,"diff":null,"credits_used":138,"created_at":"2022-04-05"}],"total":3,"per_page":2,"page":2}'
+  recorded_at: Thu, 07 Apr 2022 08:09:30 GMT
+recorded_with: VCR 6.1.0
