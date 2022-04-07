@@ -15,12 +15,21 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-```
+```ruby
 client = Datashake::ReviewScaper::Client.new(token: 'your-api-token')
-client
+
+client # Add a review profile by url
   .add
   .url("https://www.amazon.com/dp/B003YH9MMI")
+  .from_date("2021-01-01")
   .fetch
+
+client # Add a review profile by google search query
+  .add
+  .query(""I-80 Towing & Service, 1209 S 3rd St, Laramie, WY 82070, USA"")
+  .fetch
+
+client.info.job_id(346998013).fetch # Fetch job details
   ```
 
 ## Development
@@ -28,6 +37,8 @@ client
 After checking out the repo, run `bin/setup` to install dependencies.
 Then, run `rake spec` to run the tests.
 You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+This gem uses [standardrb](https://github.com/testdouble/standard) for code style. Just write your code and run `bundle exec rake standard:fix`.
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
