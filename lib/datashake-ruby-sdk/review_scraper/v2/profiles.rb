@@ -5,6 +5,7 @@ module Datashake
     class V2
       class Profiles
         autoload :Add, "datashake-ruby-sdk/review_scraper/v2/profiles/add"
+        autoload :AddBulk, "datashake-ruby-sdk/review_scraper/v2/profiles/add_bulk"
         autoload :Jobs, "datashake-ruby-sdk/review_scraper/v2/profiles/jobs"
         autoload :Info, "datashake-ruby-sdk/review_scraper/v2/profiles/info"
 

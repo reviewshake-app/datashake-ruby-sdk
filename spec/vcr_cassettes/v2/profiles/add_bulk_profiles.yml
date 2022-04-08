@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.datashake.com/api/v2/profiles/add_bulk
+    body:
+      encoding: UTF-8
+      string: '[{"url":"https://www.homeaway.com/vacation-rental/p4494671","callback":"https://app.reviewcompany.com/datashake_callback","from_date":"2021-01-01"},{"query":"I-80
+        Towing & Service, 1209 S 3rd St, Laramie, WY 82070, USA","callback":"https://app.reviewcompany.com/datashake_callback","blocks":"10"}]'
+    headers:
+      spiderman-token:
+      - abdecf
+      User-Agent:
+      - Faraday v2.2.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 08 Apr 2022 05:53:33 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"0329b501c977c1cbe7de39020a014833"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - ea671708acc74597b62c0862ad6765b8
+      x-runtime:
+      - '0.050903'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '[{"url":"https://www.homeaway.com/vacation-rental/p4494671","callback":"https://app.reviewcompany.com/datashake_callback","from_date":"2021-01-01","success":true,"job_id":348534142,"status":200,"message":"Added
+        this profile to the queue..."},{"query":"I-80 Towing \u0026 Service, 1209
+        S 3rd St, Laramie, WY 82070, USA","callback":"https://app.reviewcompany.com/datashake_callback","blocks":"10","success":true,"job_id":348534143,"status":200,"message":"Added
+        this profile to the queue..."}]'
+  recorded_at: Fri, 08 Apr 2022 05:53:33 GMT
+recorded_with: VCR 6.1.0

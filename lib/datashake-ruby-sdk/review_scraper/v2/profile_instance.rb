@@ -24,7 +24,7 @@ module Datashake
         attribute :percentage_complete, Datashake::Types::Strict::Integer
         attribute :result_count, Datashake::Types::Strict::Integer
         attribute :credits_used, Datashake::Types::Strict::Integer
-        attribute :from_date, Datashake::Types::Params::String.optional
+        attribute :from_date, Datashake::Types::Params::Date.optional
         attribute :blocks, Datashake::Types::Strict::Integer.optional
       end
     end

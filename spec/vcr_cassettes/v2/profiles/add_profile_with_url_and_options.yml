@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app.datashake.com/api/v2/profiles/add?blocks=50&callback=https%3A%2F%2Fapp.reviewcompany.com%2Fdatashake_callback&diff=346998052&external_identifier=qwerty123&from_date=2021-01-01&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB003YH9MMI
+    uri: https://app.datashake.com/api/v2/profiles/add?blocks=50&callback=https%3A%2F%2Fapp.reviewcompany.com%2Fdatashake_callback&diff=346998052&external_identifier=qwerty123&from_date=2022-02-01&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB003YH9MMI
     body:
       encoding: US-ASCII
       string: ''
@@ -17,7 +17,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Wed, 06 Apr 2022 13:48:46 GMT
+      - Fri, 08 Apr 2022 06:09:44 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -25,18 +25,18 @@ http_interactions:
       connection:
       - keep-alive
       etag:
-      - W/"5c3e7a8de73b1657c5239d67636b9456"
+      - W/"373f01bf411ef47e85b5aaa089c2554f"
       cache-control:
       - max-age=0, private, must-revalidate
       x-request-id:
-      - 2031d3d27b01800e96235890d6ef26d5
+      - 39a64355357d8a0af2e6be253299994c
       x-runtime:
-      - '0.035132'
+      - '0.028956'
       strict-transport-security:
       - max-age=15724800; includeSubDomains
     body:
       encoding: UTF-8
-      string: '{"success":true,"job_id":347560429,"status":200,"message":"Added this
+      string: '{"success":true,"job_id":348535659,"status":200,"message":"Added this
         profile to the queue..."}'
-  recorded_at: Wed, 06 Apr 2022 13:48:46 GMT
+  recorded_at: Fri, 08 Apr 2022 06:09:44 GMT
 recorded_with: VCR 6.1.0

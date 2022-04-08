@@ -38,7 +38,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
           VCR.use_cassette("v2/profiles/add_profile_with_url_and_options") do
             response = subject
               .url("https://www.amazon.com/dp/B003YH9MMI")
-              .from_date("2021-01-01")
+              .from_date("2022-02-01")
               .blocks(50)
               .diff(346_998_052)
               .callback("https://app.reviewcompany.com/datashake_callback")
@@ -46,7 +46,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
               .fetch
 
             expect(response.success).to be(true)
-            expect(response.job_id).to eq(347_560_429)
+            expect(response.job_id).to eq(348535659)
             expect(response.status).to eq(200)
             expect(response.message).to eq("Added this profile to the queue...")
           end
