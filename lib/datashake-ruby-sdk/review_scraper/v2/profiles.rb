@@ -7,6 +7,7 @@ module Datashake
         autoload :Add, "datashake-ruby-sdk/review_scraper/v2/profiles/add"
         autoload :AddBulk, "datashake-ruby-sdk/review_scraper/v2/profiles/add_bulk"
         autoload :Jobs, "datashake-ruby-sdk/review_scraper/v2/profiles/jobs"
+        autoload :Job, "datashake-ruby-sdk/review_scraper/v2/profiles/job"
         autoload :Info, "datashake-ruby-sdk/review_scraper/v2/profiles/info"
 
         def initialize(version)

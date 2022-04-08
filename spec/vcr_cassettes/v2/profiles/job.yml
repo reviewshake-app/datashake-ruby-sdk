@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.datashake.com/api/v2/profiles/jobs/348534143
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 08 Apr 2022 07:59:41 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"e16b8fc055c966acf01d56b759c09480"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 338ae06375ce86b3268e11325c679e14
+      x-runtime:
+      - '0.012208'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"job_id":348534143,"url":"I-80 Towing \u0026 Service,
+        1209 S 3rd St, Laramie, WY 82070, USA","status":"complete","last_crawl":"2022-04-08","from_date":null,"credits_used":20,"callback_status":200,"callback_response":"\u003c!doctype
+        html\u003e\u003chtml lang=\"en\" data-adblockkey=\"MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANDrp2lz7AOmADaN8tA50LsWcjLFyQFcb/P2Txc58oYOeILb3vBw7J6f4pamkAQVSQuqYsKx3YzdUHCvbVZvFUsCAwEAAQ==_bPO5qVrk1R1qUVBF6nW9lKYSrGOuYPHWZlLgZ3IvQSJSH3n5hv4qqG9IX+hpmXi8e61SBbUubbl3SYGC78bEMA==\"\u003e\u003chead\u003e\u003cmeta
+        charset=\"utf-8\"\u003e\u003cmeta name=\"viewport\" content=\"width=device-width,
+        initial-scale=1\"\u003e\u003clink rel=\"shortcut icon\" href=\"/favicon.ico\"
+        type=\"image/x-icon\"/\u003e\u003clink rel=\"preconnect\" href=\"https://www.google.com\"
+        crossorigin\u003e\u003clink rel=\"dns-prefetch\" href=\"https://parking.bodiscdn.com\"
+        crossorigin\u003e\u003clink rel=\"dns-prefetch\" href=\"https://fonts.googleapis.com\"
+        crossorigin\u003e\u003c/head\u003e\u003cbody\u003e\u003cdiv id=\"target\"
+        style=''opacity: 0''\u003e\u003c/div\u003e\u003cscript\u003ewindow.park =
+        \"eyJ1dWlkIjoiNjE4NzY2MjktYmVmZC0wMzcxLWJlOGMtOTdiMjdhMGQ0ZWI5IiwicGFnZV90aW1lIjoxNjQ5Mzk3MjM0LCJwYWdlX3VybCI6Imh0dHBzOlwvXC9hcHAucmV2aWV3Y29tcGFueS5jb21cL2RhdGFzaGFrZV9jYWxsYmFjayIsInBhZ2VfbWV0aG9kIjoiUE9TVCIsInBhZ2VfcmVxdWVzdCI6W10sInBhZ2VfaGVhZGVycyI6eyJjb250ZW50LWxlbmd0aCI6WyI4ND"}'
+  recorded_at: Fri, 08 Apr 2022 07:59:41 GMT
+recorded_with: VCR 6.1.0
