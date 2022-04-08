@@ -14,28 +14,24 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Info do
           .job_id(346_998_013)
           .fetch
 
-        expect(response).to eq(
-          {
-            success: true,
-            status: 200,
-            job_id: 346998013,
-            source_url: "https://www.amazon.com/dp/B003YH9MMI",
-            source_name: "amazon",
-            place_id: nil,
-            external_identifier: nil,
-            meta_data: "{\"star_ratings\":{\"1star\":\"1%\",\"2star\":\"4%\",\"3star\":\"7%\",\"4star\":\"27%\",\"5star\":\"61%\"}}",
-            unique_id: nil,
-            review_count: 214,
-            average_rating: 4.4,
-            last_crawl: "2022-04-05",
-            crawl_status: "complete",
-            percentage_complete: 100,
-            result_count: 130,
-            credits_used: 138,
-            from_date: nil,
-            blocks: nil
-          }
-        )
+        expect(response.success).to be(true)
+        expect(response.status).to eq(200)
+        expect(response.job_id).to eq(346998013)
+        expect(response.source_url).to eq("https://www.amazon.com/dp/B003YH9MMI")
+        expect(response.source_name).to eq("amazon")
+        expect(response.place_id).to be_nil
+        expect(response.external_identifier).to be_nil
+        expect(response.meta_data).to eq({"star_ratings" => {"1star" => "1%", "2star" => "4%", "3star" => "7%", "4star" => "27%", "5star" => "61%"}})
+        expect(response.unique_id).to be_nil
+        expect(response.review_count).to eq(214)
+        expect(response.average_rating).to eq(4.4)
+        expect(response.last_crawl).to eq(Date.parse("2022-04-05"))
+        expect(response.crawl_status).to eq("complete")
+        expect(response.percentage_complete).to eq(100)
+        expect(response.result_count).to eq(130)
+        expect(response.credits_used).to eq(138)
+        expect(response.from_date).to be_nil
+        expect(response.blocks).to be_nil
       end
     end
   end

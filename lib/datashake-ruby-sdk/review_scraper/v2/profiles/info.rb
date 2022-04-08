@@ -23,7 +23,7 @@ module Datashake
               request.params = params
             end
 
-            response.body.transform_keys(&:to_sym)
+            Datashake::ReviewScraper::V2::ProfileInstance.new(response.body)
           end
 
           private

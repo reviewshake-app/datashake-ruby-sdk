@@ -17,27 +17,21 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Jobs do
           .per_page(2)
           .fetch
 
-        expect(response).to eq(
-          {
-            jobs: [
-              {
-                "job_id" => 346_998_013,
-                "url" => "https://www.amazon.com/dp/B003YH9MMI",
-                "place_id" => nil,
-                "status" => "complete",
-                "last_crawl" => "2022-04-05",
-                "from_date" => nil,
-                "blocks" => nil,
-                "diff" => nil,
-                "credits_used" => 138,
-                "created_at" => "2022-04-05"
-              }
-            ],
-            total: 3,
-            per_page: 2,
-            page: 2
-          }
-        )
+        expect(response.total).to eq(3)
+        expect(response.per_page).to eq(2)
+        expect(response.page).to eq(2)
+
+        job = response.jobs.first
+        expect(job.job_id).to eq(346_998_013)
+        expect(job.url).to eq("https://www.amazon.com/dp/B003YH9MMI")
+        expect(job.place_id).to eq(nil)
+        expect(job.status).to eq("complete")
+        expect(job.last_crawl).to eq(Date.parse("2022-04-05"))
+        expect(job.from_date).to be_nil
+        expect(job.blocks).to be_nil
+        expect(job.diff).to be_nil
+        expect(job.credits_used).to eq(138)
+        expect(job.created_at).to eq(Date.parse("2022-04-05"))
       end
     end
   end
