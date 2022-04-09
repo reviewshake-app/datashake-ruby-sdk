@@ -9,6 +9,7 @@ module Datashake
         autoload :Jobs, "datashake-ruby-sdk/review_scraper/v2/profiles/jobs"
         autoload :Job, "datashake-ruby-sdk/review_scraper/v2/profiles/job"
         autoload :Info, "datashake-ruby-sdk/review_scraper/v2/profiles/info"
+        autoload :Reviews, "datashake-ruby-sdk/review_scraper/v2/profiles/reviews"
 
         def initialize(version)
           @version = version

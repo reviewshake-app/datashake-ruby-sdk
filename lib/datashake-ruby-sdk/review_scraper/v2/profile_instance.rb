@@ -16,7 +16,7 @@ module Datashake
         attribute :place_id, Datashake::Types::Strict::String.optional
         attribute :external_identifier, Datashake::Types::Strict::String.optional
         attribute :meta_data, Datashake::Types::Metadata
-        attribute :unique_id, Datashake::Types::Strict::Integer.optional
+        attribute :unique_id, Datashake::Types::Strict::String.optional
         attribute :review_count, Datashake::Types::Strict::Integer
         attribute :average_rating, Datashake::Types::Strict::Float
         attribute :last_crawl, Datashake::Types::Params::Date
@@ -26,6 +26,7 @@ module Datashake
         attribute :credits_used, Datashake::Types::Strict::Integer
         attribute :from_date, Datashake::Types::Params::Date.optional
         attribute :blocks, Datashake::Types::Strict::Integer.optional
+        attribute? :reviews, Datashake::Types::ReviewCollection
       end
     end
   end

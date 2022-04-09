@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.datashake.com/api/v2/profiles/reviews?allow_response=true&from_date=2022-02-01&job_id=349179093&language_code=en&page=2&per_page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sat, 09 Apr 2022 15:13:57 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"a875233006a6be31c8d3d84ca78ccabb"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 20364d3dfe3728e4710dd627210cb9b8
+      x-runtime:
+      - '0.027048'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"status":200,"job_id":349179093,"source_url":"Cafe
+        Grumpy - Grand Central Terminal","source_name":"google","place_id":"ChIJPVwsIAJZwokRZwG7oezgams","external_identifier":null,"meta_data":"{\"address\":\"89
+        E 42nd St, New York, NY 10017\",\"name\":\"Cafe Grumpy - Grand Central Terminal\"}","unique_id":"ChIJPVwsIAJZwokRZwG7oezgams","review_count":550,"average_rating":4.4,"last_crawl":"2022-04-09","crawl_status":"complete","percentage_complete":100,"result_count":9,"credits_used":560,"from_date":null,"blocks":null,"reviews":[{"id":5799839788,"name":"Cecilia","date":"2022-04-04","rating_value":5.0,"review_text":"Amazing coffee, love the vibe.","url":"https://www.google.com/maps/contrib/69480124/place/RZwG7oezgams","profile_picture":"https://lh3.googleusercontent.com/a-/0P0KiqBaJw=s240-cbr100","location":null,"review_title":null,"verified_order":false,"reviewer_title":null,"language_code":null,"unique_id":"112986693786969480124","meta_data":null}]}'
+  recorded_at: Sat, 09 Apr 2022 15:13:57 GMT
+recorded_with: VCR 6.1.0
