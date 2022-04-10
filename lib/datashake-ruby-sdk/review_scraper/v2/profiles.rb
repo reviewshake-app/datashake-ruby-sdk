@@ -19,12 +19,24 @@ module Datashake
           Add.new(version)
         end
 
+        def add_bulk
+          AddBulk.new(version)
+        end
+
         def jobs
           Jobs.new(version)
         end
 
+        def job
+          Job.new(version)
+        end
+
         def info
           Info.new(version)
+        end
+
+        def reviews
+          Reviews.new(version)
         end
 
         private

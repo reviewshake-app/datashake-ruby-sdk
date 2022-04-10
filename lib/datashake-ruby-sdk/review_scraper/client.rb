@@ -34,12 +34,24 @@ module Datashake
         v2.profiles.add
       end
 
+      def add_profiles
+        v2.profiles.add_bulk
+      end
+
       def jobs
         v2.profiles.jobs
       end
 
+      def job(job_id)
+        v2.profiles.job.job_id(job_id)
+      end
+
       def info(job_id)
         v2.profiles.info.job_id(job_id)
+      end
+
+      def reviews(job_id)
+        v2.profiles.reviews.job_id(job_id)
       end
 
       private
