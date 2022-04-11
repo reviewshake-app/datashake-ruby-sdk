@@ -30,6 +30,8 @@ client # Add a review profile by google search query
   .fetch
 
 client.info.job_id(346998013).fetch # Fetch job details
+
+client.reviews.job_id(346998013).page(2).per_page(10).fetch # Fetch reviews for the given job
   ```
 
 ## Development
