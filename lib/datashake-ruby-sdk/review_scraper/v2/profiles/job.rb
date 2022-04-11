@@ -22,7 +22,7 @@ module Datashake
             path = "#{PATH}/#{params[:job_id]}"
             response = version.fetch(method: :get, path: path)
 
-            Datashake::ReviewScraper::V2::JobInstance.new(response.body)
+            Datashake::ReviewScraper::V2::JobInstance.new(response)
           end
 
           private

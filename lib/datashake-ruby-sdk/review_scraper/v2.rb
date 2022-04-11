@@ -3,6 +3,7 @@
 module Datashake
   module ReviewScraper
     class V2
+      autoload :Error, "datashake-ruby-sdk/review_scraper/v2/error"
       autoload :Profiles, "datashake-ruby-sdk/review_scraper/v2/profiles"
       autoload :Response, "datashake-ruby-sdk/review_scraper/v2/response"
       autoload :BulkResponse, "datashake-ruby-sdk/review_scraper/v2/bulk_response"
@@ -24,10 +25,22 @@ module Datashake
       end
 
       def fetch(method:, path:, params: {}, body: {})
-        connection.public_send(method, path) do |request|
+        response = connection.public_send(method, path) do |request|
           request.params = params
           request.body = body.to_json
         end
+
+        body = response.body
+
+        return body if body.is_a?(Array)
+        return body if body["status"].is_a?(String)
+        return body if body["jobs"]
+        return body if body["status"] == 200
+
+        raise Datashake::ReviewScraper::V2::Error.new(
+          body["message"],
+          body.fetch("status", response.status)
+        )
       end
 
       private

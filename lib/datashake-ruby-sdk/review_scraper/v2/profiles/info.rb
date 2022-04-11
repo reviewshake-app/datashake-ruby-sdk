@@ -21,7 +21,7 @@ module Datashake
           def fetch
             response = version.fetch(method: :get, path: PATH, params: params)
 
-            Datashake::ReviewScraper::V2::ProfileInstance.new(response.body)
+            Datashake::ReviewScraper::V2::ProfileInstance.new(response)
           end
 
           private

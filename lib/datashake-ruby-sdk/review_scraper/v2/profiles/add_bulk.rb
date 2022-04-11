@@ -21,7 +21,7 @@ module Datashake
           def fetch
             response = version.fetch(method: :post, path: PATH, body: body)
 
-            response.body.map do |item|
+            response.map do |item|
               Datashake::ReviewScraper::V2::BulkResponse.new(item)
             end
           end

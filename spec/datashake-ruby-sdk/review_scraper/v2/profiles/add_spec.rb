@@ -14,12 +14,8 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
   context "when token is invalid" do
     it "returns 401" do
       VCR.use_cassette("v2/profiles_invalid_token") do
-        response = subject.url("https://www.amazon.com/dp/B003YH9MMI").fetch
-
-        expect(response.success).to be(false)
-        expect(response.job_id).to be_nil
-        expect(response.status).to eq(401)
-        expect(response.message).to eq("Invalid spiderman-token")
+        expect { subject.url("https://www.amazon.com/dp/B003YH9MMI").fetch }
+          .to raise_error(Datashake::ReviewScraper::V2::Error)
       end
     end
   end

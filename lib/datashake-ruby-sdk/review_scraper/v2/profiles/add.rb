@@ -63,7 +63,7 @@ module Datashake
           def fetch
             response = version.fetch(method: :post, path: PATH, params: params)
 
-            Datashake::ReviewScraper::V2::Response.new(response.body)
+            Datashake::ReviewScraper::V2::Response.new(response)
           end
 
           private
