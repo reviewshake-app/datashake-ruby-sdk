@@ -50,6 +50,10 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
       expect(review.language_code).to be_nil
       expect(review.unique_id).to eq("109955990550898390948")
       expect(review.meta_data).to be_nil
+      expect(review.response.id).to eq(419632310)
+      expect(review.response.name).to eq("Response from the owner")
+      expect(review.response.date).to eq(Date.parse("2021-11-11"))
+      expect(review.response.comment).to eq("Thank you Denise!")
     end
   end
 

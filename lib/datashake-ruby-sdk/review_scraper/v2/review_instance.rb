@@ -22,6 +22,7 @@ module Datashake
         attribute :reviewer_title, Datashake::Types::Strict::String.optional
         attribute :unique_id, Datashake::Types::Strict::String
         attribute :meta_data, Datashake::Types::Metadata.optional
+        attribute? :response, Datashake::ReviewScraper::V2::ReviewResponseInstance
       end
     end
   end

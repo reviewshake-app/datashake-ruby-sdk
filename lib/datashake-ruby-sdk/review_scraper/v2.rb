@@ -11,6 +11,7 @@ module Datashake
       autoload :JobsInstance, "datashake-ruby-sdk/review_scraper/v2/jobs_instance"
       autoload :ProfileInstance, "datashake-ruby-sdk/review_scraper/v2/profile_instance"
       autoload :ReviewInstance, "datashake-ruby-sdk/review_scraper/v2/review_instance"
+      autoload :ReviewResponseInstance, "datashake-ruby-sdk/review_scraper/v2/review_response_instance"
 
       def initialize(client)
         @client = client
