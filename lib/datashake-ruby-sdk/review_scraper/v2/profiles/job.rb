@@ -19,7 +19,8 @@ module Datashake
           end
 
           def fetch
-            response = version.connection.get("#{PATH}/#{params[:job_id]}")
+            path = "#{PATH}/#{params[:job_id]}"
+            response = version.fetch(method: :get, path: path)
 
             Datashake::ReviewScraper::V2::JobInstance.new(response.body)
           end

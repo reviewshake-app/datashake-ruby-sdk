@@ -23,6 +23,13 @@ module Datashake
         client.connection
       end
 
+      def fetch(method:, path:, params: {}, body: {})
+        connection.public_send(method, path) do |request|
+          request.params = params
+          request.body = body.to_json
+        end
+      end
+
       private
 
       attr_reader :client

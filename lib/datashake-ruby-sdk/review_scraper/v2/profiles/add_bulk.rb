@@ -19,9 +19,7 @@ module Datashake
           end
 
           def fetch
-            response = version.connection.post(PATH) do |request|
-              request.body = body.to_json
-            end
+            response = version.fetch(method: :post, path: PATH, body: body)
 
             response.body.map do |item|
               Datashake::ReviewScraper::V2::BulkResponse.new(item)

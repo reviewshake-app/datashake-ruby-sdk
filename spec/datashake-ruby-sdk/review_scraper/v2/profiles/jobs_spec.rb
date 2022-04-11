@@ -3,7 +3,11 @@
 require "spec_helper"
 
 RSpec.describe Datashake::ReviewScraper::V2::Profiles::Jobs do
-  let(:client) { Datashake::ReviewScraper::Client.new(token: "abcdef") }
+  let(:client) do
+    Datashake::ReviewScraper::V2.new(
+      Datashake::ReviewScraper::Client.new(token: "abcdef")
+    )
+  end
 
   subject { described_class.new(client) }
 

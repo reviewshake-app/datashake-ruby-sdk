@@ -61,9 +61,7 @@ module Datashake
           end
 
           def fetch
-            response = version.connection.post(PATH) do |request|
-              request.params = params
-            end
+            response = version.fetch(method: :post, path: PATH, params: params)
 
             Datashake::ReviewScraper::V2::Response.new(response.body)
           end
