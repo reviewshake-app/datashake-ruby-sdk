@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.datashake.com/api/v2/profiles/add?diff=123&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB003YH9MMI
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 13 Apr 2022 12:01:57 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"ab13788df912728a12865fa5e77cb175"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 4502ca2388d7f74671d031aa2174ae0a
+      x-runtime:
+      - '0.021376'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"status":400,"message":"No diff job exists with id
+        123"}'
+  recorded_at: Wed, 13 Apr 2022 12:01:57 GMT
+recorded_with: VCR 6.1.0

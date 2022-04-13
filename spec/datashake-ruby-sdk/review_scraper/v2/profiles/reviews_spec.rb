@@ -106,4 +106,19 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
       end
     end
   end
+
+  context "when job id param is not found" do
+    it "throwns an error" do
+      VCR.use_cassette("v2/profiles/reviews_job_id_not_found") do
+        expect do
+          subject.job_id(3491790932329819).fetch
+        end
+          .to raise_error do |error|
+            expect(error).to be_a(Datashake::ReviewScraper::V2::Error)
+            expect(error.message).to eq("This job ID doesn't exist, please create it")
+            expect(error.status).to eq(400)
+          end
+      end
+    end
+  end
 end

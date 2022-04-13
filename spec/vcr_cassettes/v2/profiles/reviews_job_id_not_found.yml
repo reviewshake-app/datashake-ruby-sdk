@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.datashake.com/api/v2/profiles/reviews?job_id=3491790932329819
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 13 Apr 2022 12:18:17 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"85bffe2e4fe99047a11b0135d2a8a48b"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 3c9a8d97d22ee73f24b0ec6a6c26c0da
+      x-runtime:
+      - '0.037080'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"status":400,"message":"This job ID doesn''t exist,
+        please create it"}'
+  recorded_at: Wed, 13 Apr 2022 12:18:17 GMT
+recorded_with: VCR 6.1.0

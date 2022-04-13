@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://app.datashake.com/api/v2/profiles/add?from_date=2022-02-01
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.2.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Wed, 13 Apr 2022 11:55:34 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"57bf41907e878af13f0a5a19d3f42e1d"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - c45f5a3f1d0b2a7c04de2df6f57a3dc6
+      x-runtime:
+      - '0.014889'
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"status":400,"message":"Please send either one of
+        URL or query or place_id parameter"}'
+  recorded_at: Wed, 13 Apr 2022 11:55:35 GMT
+recorded_with: VCR 6.1.0

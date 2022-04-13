@@ -12,10 +12,16 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
   subject { described_class.new(client) }
 
   context "when token is invalid" do
-    it "returns 401" do
+    it "throwns an error" do
       VCR.use_cassette("v2/profiles_invalid_token") do
-        expect { subject.url("https://www.amazon.com/dp/B003YH9MMI").fetch }
-          .to raise_error(Datashake::ReviewScraper::V2::Error)
+        expect do
+          subject.url("https://www.amazon.com/dp/B003YH9MMI").fetch
+        end
+          .to raise_error do |error|
+            expect(error).to be_a(Datashake::ReviewScraper::V2::Error)
+            expect(error.message).to eq("Invalid spiderman-token")
+            expect(error.status).to eq(401)
+          end
       end
     end
   end
@@ -32,24 +38,55 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
           expect(response.message).to eq("Added this profile to the queue...")
         end
       end
+    end
 
-      context "and optional params are given" do
-        it "returns 200" do
-          VCR.use_cassette("v2/profiles/add_profile_with_url_and_options") do
-            response = subject
+    context "but no required param is given" do
+      it "throws an error" do
+        VCR.use_cassette("v2/profiles/add_profile_incorrect") do
+          expect { subject.from_date("2022-02-01").fetch }
+            .to raise_error do |error|
+              expect(error).to be_a(Datashake::ReviewScraper::V2::Error)
+              expect(error.message).to eq("Please send either one of URL or query or place_id parameter")
+              expect(error.status).to eq(400)
+            end
+        end
+      end
+    end
+
+    context "but incorrect diff param is given" do
+      it "throws an error" do
+        VCR.use_cassette("v2/profiles/add_profile_incorrect_diff") do
+          expect do
+            subject
               .url("https://www.amazon.com/dp/B003YH9MMI")
-              .from_date("2022-02-01")
-              .blocks(50)
-              .diff(346_998_052)
-              .callback("https://app.reviewcompany.com/datashake_callback")
-              .external_identifier("qwerty123")
+              .diff(123)
               .fetch
-
-            expect(response.success).to be(true)
-            expect(response.job_id).to eq(348535659)
-            expect(response.status).to eq(200)
-            expect(response.message).to eq("Added this profile to the queue...")
           end
+            .to raise_error do |error|
+              expect(error).to be_a(Datashake::ReviewScraper::V2::Error)
+              expect(error.message).to eq("No diff job exists with id 123")
+              expect(error.status).to eq(400)
+            end
+        end
+      end
+    end
+
+    context "and optional params are given" do
+      it "returns 200" do
+        VCR.use_cassette("v2/profiles/add_profile_with_url_and_options") do
+          response = subject
+            .url("https://www.amazon.com/dp/B003YH9MMI")
+            .from_date("2022-02-01")
+            .blocks(50)
+            .diff(346_998_052)
+            .callback("https://app.reviewcompany.com/datashake_callback")
+            .external_identifier("qwerty123")
+            .fetch
+
+          expect(response.success).to be(true)
+          expect(response.job_id).to eq(348535659)
+          expect(response.status).to eq(200)
+          expect(response.message).to eq("Added this profile to the queue...")
         end
       end
     end
