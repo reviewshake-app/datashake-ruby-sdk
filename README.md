@@ -19,13 +19,13 @@ If bundler is not being used to manage dependencies, install the gem by executin
 client = Datashake::ReviewScaper::Client.new(token: 'your-api-token')
 
 client # Add a review profile by url
-  .add
+  .add_profile
   .url("https://www.amazon.com/dp/B003YH9MMI")
   .from_date("2021-01-01")
   .fetch
 
 client # Add a review profile by google search query
-  .add
+  .add_profile
   .query(""I-80 Towing & Service, 1209 S 3rd St, Laramie, WY 82070, USA"")
   .fetch
 
