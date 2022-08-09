@@ -11,6 +11,27 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
 
   subject { described_class.new(client) }
 
+  context "when request timeouts" do
+    it "throwns an error" do
+      connection_mock = double
+      allow(connection_mock).to receive(:post).and_raise(Faraday::TimeoutError)
+
+      client = instance_double(
+        Datashake::ReviewScraper::Client,
+        token: "abcdef",
+        connection: connection_mock
+      )
+
+      version = Datashake::ReviewScraper::V2.new(client)
+      subject = described_class.new(version)
+
+      expect do
+        subject.url("https://www.amazon.com/dp/B003YH9MMI").fetch
+      end
+        .to raise_error { |error| expect(error).to be_a(Faraday::TimeoutError) }
+    end
+  end
+
   context "when token is invalid" do
     it "throwns an error" do
       VCR.use_cassette("v2/profiles_invalid_token") do
