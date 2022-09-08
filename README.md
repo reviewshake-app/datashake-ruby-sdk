@@ -56,9 +56,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/review
 
 ## Release
 
-Bump the version number in https://github.com/reviewshake/datashake-ruby-sdk/blob/main/lib/datashake-ruby-sdk/version.rb, create a release with github and a tag from the new version number. After doing the github release, build the gem from your commandline with build and push the version rubygems.
-
-Create a release with github
+Bump the version number in https://github.com/reviewshake/datashake-ruby-sdk/blob/main/lib/datashake-ruby-sdk/version.rb, create a release with github and a tag from the new version number. After doing the github release, build the gem (`gem build`) from your terminal and push (`gem push`) the new version rubygems https://rubygems.org/gems/datashake-ruby-sdk. You need to be a gem owner in order to do this.
 
 ## License
 
