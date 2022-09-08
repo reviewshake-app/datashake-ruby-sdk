@@ -54,6 +54,12 @@ To release a new version, update the version number in `version.rb`, and then ru
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/reviewshake/datashake-ruby-sdk.
 
+## Release
+
+Bump the version number in https://github.com/reviewshake/datashake-ruby-sdk/blob/main/lib/datashake-ruby-sdk/version.rb, create a release with github and a tag from the new version number. After doing the github release, build the gem from your commandline with build and push the version rubygems.
+
+Create a release with github
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
