@@ -1,4 +1,4 @@
-# Datashake Ruby SDK ![Build status](https://github.com/reviewshake/datashake-ruby-sdk/actions/workflows/main.yml/badge.svg)
+# Datashake Ruby SDK ![Build status](https://github.com/reviewshake/datashake-ruby-sdk/actions/workflows/main.yml/badge.svg) [![Gem Version](https://badge.fury.io/rb/datashake-ruby-sdk.svg)](https://badge.fury.io/rb/datashake-ruby-sdk)
 
 An API wrapper written in ruby for Datashake API
 https://docs.datashake.com/
