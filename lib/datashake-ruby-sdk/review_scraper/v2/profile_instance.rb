@@ -15,13 +15,13 @@ module Datashake
         attribute :source_name, Datashake::Types::Strict::String
         attribute :place_id, Datashake::Types::Strict::String.optional
         attribute :external_identifier, Datashake::Types::Strict::String.optional
-        attribute :meta_data, Datashake::Types::Metadata
+        attribute :meta_data, Datashake::Types::Metadata.optional
         attribute :unique_id, Datashake::Types::Strict::String.optional
-        attribute :review_count, Datashake::Types::Strict::Integer
-        attribute :average_rating, Datashake::Types::Strict::Float
-        attribute :last_crawl, Datashake::Types::Params::Date
+        attribute :review_count, Datashake::Types::Strict::Integer.optional
+        attribute :average_rating, Datashake::Types::Strict::Float.optional
+        attribute :last_crawl, Datashake::Types::Params::Date.optional
         attribute :crawl_status, Datashake::Types::Strict::String
-        attribute :percentage_complete, Datashake::Types::Strict::Integer
+        attribute :percentage_complete, Datashake::Types::Coercible::Integer
         attribute :result_count, Datashake::Types::Strict::Integer
         attribute :credits_used, Datashake::Types::Strict::Integer
         attribute :from_date, Datashake::Types::Params::Date.optional

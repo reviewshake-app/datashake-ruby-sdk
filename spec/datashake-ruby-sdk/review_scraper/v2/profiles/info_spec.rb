@@ -11,9 +11,38 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Info do
 
   subject { described_class.new(client) }
 
-  context "and url param is given" do
+  context "when the job is in maintenance" do
+    it "returns 200", :aggregate_failures do
+      VCR.use_cassette("v2/profiles/info/maintenance") do
+        response = subject
+          .job_id(410391486)
+          .fetch
+
+        expect(response.success).to be(true)
+        expect(response.status).to eq(200)
+        expect(response.job_id).to eq(410391486)
+        expect(response.source_url).to eq("https://www.lawyers.com/fadfadfdasfa")
+        expect(response.source_name).to eq("lawyers")
+        expect(response.place_id).to be_nil
+        expect(response.external_identifier).to eq("123")
+        expect(response.meta_data).to be_nil
+        expect(response.unique_id).to be_nil
+        expect(response.review_count).to be_nil
+        expect(response.average_rating).to be_nil
+        expect(response.last_crawl).to be_nil
+        expect(response.crawl_status).to eq("maintenance")
+        expect(response.percentage_complete).to eq(0)
+        expect(response.result_count).to eq(0)
+        expect(response.credits_used).to eq(8)
+        expect(response.from_date).to be_nil
+        expect(response.blocks).to be_nil
+      end
+    end
+  end
+
+  context "when the job is complete" do
     it "returns 200" do
-      VCR.use_cassette("v2/profiles/info") do
+      VCR.use_cassette("v2/profiles/info/success") do
         response = subject
           .job_id(348548418)
           .fetch
