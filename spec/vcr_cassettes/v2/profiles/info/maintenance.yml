@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://app.datashake.com/api/v2/profiles/info?job_id=410391486
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      spiderman-token:
+      - abcdef
+      User-Agent:
+      - Faraday v2.5.2
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 13 Sep 2022 07:25:13 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      etag:
+      - W/"4cb257df5913c6599ba9c8526dd4072b"
+      cache-control:
+      - max-age=0, private, must-revalidate
+      x-request-id:
+      - 37443876a8786fb08e0cd23979b731fc
+      x-runtime:
+      - '0.025012'
+      vary:
+      - Origin
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"status":200,"job_id":410391486,"source_url":"https://www.lawyers.com/fadfadfdasfa","source_name":"lawyers","place_id":null,"external_identifier":"123","meta_data":null,"unique_id":null,"review_count":null,"average_rating":null,"last_crawl":null,"crawl_status":"maintenance","percentage_complete":0.0,"result_count":0,"credits_used":8,"from_date":null,"blocks":null}'
+  recorded_at: Tue, 13 Sep 2022 07:25:13 GMT
+recorded_with: VCR 6.1.0
