@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://reviewindexapi.datashake.com/profiles?api_key=abcdef&callback=https%3A%2F%2Fxmpl.com%2Fcb&name
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Thu, 13 Oct 2022 10:29:26 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '262'
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"message":"Bad request","request_id":"1665656965615763348-8534c819-ca3e-47","credits_used":0,"details":"Missing
+        parameter. The following must be present: name. Please make sure to provide
+        this parameter and make the request again.","request":{}}'
+  recorded_at: Thu, 13 Oct 2022 10:29:26 GMT
+recorded_with: VCR 6.1.0

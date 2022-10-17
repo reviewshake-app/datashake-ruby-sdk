@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://reviewindexapi.datashake.com/profiles?api_key=abcdef&callback=https%3A%2F%2Fxmpl.com%2Fcb&name=KFC
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Thu, 13 Oct 2022 09:35:06 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '118'
+      connection:
+      - keep-alive
+      riapi-request-id:
+      - 1665653705777672218-fe461586-5782-44
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"message":"Your task was successfully submitted.","request_id":"1665653705777672218-fe461586-5782-44"}'
+  recorded_at: Thu, 13 Oct 2022 09:35:06 GMT
+recorded_with: VCR 6.1.0

@@ -39,6 +39,22 @@ client.info.job_id(346998013).fetch # Fetch job details
 client.reviews.job_id(346998013).page(2).per_page(10).fetch # Fetch reviews for the given job
   ```
 
+```ruby
+client = Datashake::ReviewIndex::Client.new(token: 'your-api-token')
+
+response = client # Get reviews from RIAPI
+  .reviews
+  .callback("https://myserver.com/callbacks/reviews")
+  .name("McDonalds")
+  .city("Tbilisi")
+  .fetch
+
+response.success => true
+response.request_id => "1665992737596342636-004fd578-fd32-41"
+response.status => 201
+response.message => "Your task was successfully submitted."
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies.
