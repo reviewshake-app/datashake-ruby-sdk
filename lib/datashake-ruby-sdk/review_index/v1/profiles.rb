@@ -6,7 +6,23 @@ module Datashake
       class Profiles < BaseEndpoint
         PATH = "profiles"
 
-        allow_parameters %i[callback name domain ticker_symbol phone_number street city zip_code state country address page_number per_page update external_identifier]
+        allow_parameters %i[
+          address
+          callback
+          city
+          country
+          domain
+          external_identifier
+          name
+          page_number
+          per_page
+          phone_number
+          state
+          street
+          ticker_symbol
+          update
+          zip_code
+        ]
 
         def endpoint_path
           PATH

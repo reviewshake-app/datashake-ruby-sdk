@@ -6,7 +6,28 @@ module Datashake
       class Reviews < BaseEndpoint
         PATH = "reviews"
 
-        allow_parameters %i[callback name domain ticker_symbol phone_number street city zip_code state country address review_site diff page_number per_page from_date to_date timeseries update external_identifier]
+        allow_parameters %i[
+          address
+          callback
+          city
+          country
+          diff
+          domain
+          external_identifier
+          from_date
+          name
+          page_number
+          per_page
+          phone_number
+          review_site
+          state
+          street
+          ticker_symbol
+          timeseries
+          to_date
+          update
+          zip_code
+        ]
 
         def endpoint_path
           PATH

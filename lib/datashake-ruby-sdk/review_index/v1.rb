@@ -36,10 +36,7 @@ module Datashake
         body = response.body
         body["status"] ||= response.status
 
-        raise Datashake::ReviewIndex::V1::Error.new("Server error", 500) if response.status >= 500
-
-        return body if body["success"]
-        return body if response.status == 201
+        return body if body["success"] || response.status == 201
 
         raise Datashake::ReviewIndex::V1::Error.new(
           body["message"],

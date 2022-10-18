@@ -18,6 +18,9 @@ RSpec.describe Datashake::ReviewIndex::Client do
   end
 
   describe "#update_status" do
-    it "is not implemented yet"
+    specify do
+      pending("not implemented because /update/status doesn't work at ReviewIndex for now")
+      expect(subject.pending_status).to be_an_instance_of(Datashake::ReviewIndex::V1::PendingStatus)
+    end
   end
 end
