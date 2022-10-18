@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://reviewindexapi.datashake.com/profiles?api_key=abcdef&callback=https%3A%2F%2Fxmpl.com%2Fcb&name=KFC
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      date:
+      - Thu, 13 Oct 2022 09:34:21 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '209'
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"message":"User unauthorized.","request_id":"1665653660892720510-bd517280-8d39-49","credits_used":0,"details":"Please
+        make sure your API key is valid and then retry the request.","request":{}}'
+  recorded_at: Thu, 13 Oct 2022 09:34:21 GMT
+recorded_with: VCR 6.1.0

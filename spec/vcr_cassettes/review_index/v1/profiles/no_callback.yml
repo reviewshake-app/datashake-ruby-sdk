@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://reviewindexapi.datashake.com/profiles?api_key=abcdef&name=KFC
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Thu, 13 Oct 2022 10:13:12 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '266'
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"message":"Bad request","request_id":"1665655992225872309-c284b353-32ba-4f","credits_used":0,"details":"Missing
+        parameter. The following must be present: callback. Please make sure to provide
+        this parameter and make the request again.","request":{}}'
+  recorded_at: Thu, 13 Oct 2022 10:13:12 GMT
+recorded_with: VCR 6.1.0

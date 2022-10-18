@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://reviewindexapi.datashake.com/profiles?api_key=abcdef&callback=https%3A%2F%2Fxmpl.com%2Fcb&city=New+York&country=US&domain=kfc.com&external_identifier=some_id&name=KFC&phone_number=%2B13323458424&state=NY&street=8th+Ave&ticker_symbol=YUM&update=true&zip_code=10001
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Fri, 14 Oct 2022 12:22:49 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '118'
+      connection:
+      - keep-alive
+      riapi-request-id:
+      - 1665750168672972530-0968a08d-b733-40
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"message":"Your task was successfully submitted.","request_id":"1665750168672972530-0968a08d-b733-40"}'
+  recorded_at: Fri, 14 Oct 2022 12:22:49 GMT
+recorded_with: VCR 6.1.0

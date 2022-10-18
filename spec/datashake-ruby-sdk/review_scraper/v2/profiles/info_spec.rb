@@ -13,7 +13,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Info do
 
   context "when the job is in maintenance" do
     it "returns 200", :aggregate_failures do
-      VCR.use_cassette("v2/profiles/info/maintenance") do
+      VCR.use_cassette("review_scraper/v2/profiles/info/maintenance") do
         response = subject
           .job_id(410391486)
           .fetch
@@ -42,7 +42,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Info do
 
   context "when the job is complete" do
     it "returns 200" do
-      VCR.use_cassette("v2/profiles/info/success") do
+      VCR.use_cassette("review_scraper/v2/profiles/info/success") do
         response = subject
           .job_id(348548418)
           .fetch

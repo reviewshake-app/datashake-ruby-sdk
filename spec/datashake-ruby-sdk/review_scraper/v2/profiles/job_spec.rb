@@ -13,7 +13,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Job do
 
   context "and url param is given" do
     it "returns 200" do
-      VCR.use_cassette("v2/profiles/job") do
+      VCR.use_cassette("review_scraper/v2/profiles/job") do
         response = subject
           .job_id(348534143)
           .fetch
@@ -34,7 +34,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Job do
 
   context "and the job is not found" do
     it "throws an error" do
-      VCR.use_cassette("v2/profiles/job_not_found") do
+      VCR.use_cassette("review_scraper/v2/profiles/job_not_found") do
         expect { subject.job_id(3485341434638423).fetch }
           .to raise_error { |error|
             expect(error).to be_a(Datashake::ReviewScraper::V2::Error)

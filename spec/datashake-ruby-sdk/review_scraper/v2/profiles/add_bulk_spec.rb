@@ -12,7 +12,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::AddBulk do
   subject { described_class.new(client) }
 
   it "returns 200" do
-    VCR.use_cassette("v2/profiles/add_bulk_profiles") do
+    VCR.use_cassette("review_scraper/v2/profiles/add_bulk_profiles") do
       response = subject
         .payload(
           [
