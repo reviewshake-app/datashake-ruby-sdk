@@ -34,7 +34,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
 
   context "when token is invalid" do
     it "throwns an error" do
-      VCR.use_cassette("v2/profiles_invalid_token") do
+      VCR.use_cassette("review_scraper/v2/profiles_invalid_token") do
         expect do
           subject.url("https://www.amazon.com/dp/B003YH9MMI").fetch
         end
@@ -50,7 +50,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
   context "when token is valid" do
     context "and url param is given" do
       it "returns 200" do
-        VCR.use_cassette("v2/profiles/add_profile_with_url") do
+        VCR.use_cassette("review_scraper/v2/profiles/add_profile_with_url") do
           response = subject.url("https://www.amazon.com/dp/B003YH9MMI").fetch
 
           expect(response.success).to be(true)
@@ -63,7 +63,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
 
     context "but no required param is given" do
       it "throws an error" do
-        VCR.use_cassette("v2/profiles/add_profile_incorrect") do
+        VCR.use_cassette("review_scraper/v2/profiles/add_profile_incorrect") do
           expect { subject.from_date("2022-02-01").fetch }
             .to raise_error do |error|
               expect(error).to be_a(Datashake::ReviewScraper::V2::Error)
@@ -76,7 +76,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
 
     context "but incorrect diff param is given" do
       it "throws an error" do
-        VCR.use_cassette("v2/profiles/add_profile_incorrect_diff") do
+        VCR.use_cassette("review_scraper/v2/profiles/add_profile_incorrect_diff") do
           expect do
             subject
               .url("https://www.amazon.com/dp/B003YH9MMI")
@@ -94,7 +94,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
 
     context "and optional params are given" do
       it "returns 200" do
-        VCR.use_cassette("v2/profiles/add_profile_with_url_and_options") do
+        VCR.use_cassette("review_scraper/v2/profiles/add_profile_with_url_and_options") do
           response = subject
             .url("https://www.amazon.com/dp/B003YH9MMI")
             .from_date("2022-02-01")
@@ -114,7 +114,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
 
     context "and query param is given" do
       it "returns 200" do
-        VCR.use_cassette("v2/profiles/add_profile_with_query") do
+        VCR.use_cassette("review_scraper/v2/profiles/add_profile_with_query") do
           response = subject.query(
             "I-80 Towing & Service, 1209 S 3rd St, Laramie, WY 82070, USA"
           ).fetch
@@ -129,7 +129,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
 
     context "and place_id param is given" do
       it "returns 200" do
-        VCR.use_cassette("v2/profiles/add_profile_with_place_id") do
+        VCR.use_cassette("review_scraper/v2/profiles/add_profile_with_place_id") do
           response = subject.place_id("ChIJr5dFzfKAhYARj99B34yuZOw").fetch
 
           expect(response.success).to be(true)

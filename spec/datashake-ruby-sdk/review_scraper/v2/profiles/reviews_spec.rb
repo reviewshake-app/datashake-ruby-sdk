@@ -12,7 +12,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
   subject { described_class.new(client) }
 
   it "returns 200" do
-    VCR.use_cassette("v2/profiles/reviews") do
+    VCR.use_cassette("review_scraper/v2/profiles/reviews") do
       response = subject
         .job_id(349179093)
         .fetch
@@ -59,7 +59,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
 
   context "and all other optional params are given" do
     it "returns 200" do
-      VCR.use_cassette("v2/profiles/reviews_with_options") do
+      VCR.use_cassette("review_scraper/v2/profiles/reviews_with_options") do
         response = subject
           .job_id(349179093)
           .from_date("2022-02-01")
@@ -109,7 +109,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
 
   context "when job id param is not found" do
     it "throwns an error" do
-      VCR.use_cassette("v2/profiles/reviews_job_id_not_found") do
+      VCR.use_cassette("review_scraper/v2/profiles/reviews_job_id_not_found") do
         expect do
           subject.job_id(3491790932329819).fetch
         end

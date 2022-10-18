@@ -13,7 +13,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Jobs do
 
   context "and url param is given" do
     it "returns 200" do
-      VCR.use_cassette("v2/profiles/jobs_with_options") do
+      VCR.use_cassette("review_scraper/v2/profiles/jobs_with_options") do
         response = subject
           .from_created_at("2022-01-01")
           .crawl_status("complete")
