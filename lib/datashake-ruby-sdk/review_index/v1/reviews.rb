@@ -6,7 +6,7 @@ module Datashake
       class Reviews < BaseEndpoint
         PATH = "reviews"
 
-        allow_parameters %i[
+        request_parameters %i[
           address
           callback
           city

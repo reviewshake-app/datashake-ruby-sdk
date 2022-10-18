@@ -4,7 +4,7 @@ module Datashake
   module ReviewIndex
     class V1
       class BaseEndpoint
-        def self.allow_parameters(request_parameters)
+        def self.request_parameters(request_parameters)
           request_parameters.each do |param_name|
             define_method(param_name) do |value|
               @params[param_name] = value

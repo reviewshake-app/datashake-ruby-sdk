@@ -6,7 +6,7 @@ module Datashake
       class Profiles < BaseEndpoint
         PATH = "profiles"
 
-        allow_parameters %i[
+        request_parameters %i[
           address
           callback
           city
