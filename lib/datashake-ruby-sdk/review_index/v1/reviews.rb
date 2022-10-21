@@ -29,6 +29,10 @@ module Datashake
           zip_code
         ]
 
+        def response_class
+          Datashake::ReviewIndex::V1::Response
+        end
+
         def endpoint_path
           PATH
         end
