@@ -55,7 +55,7 @@ RSpec.describe Datashake::ReviewIndex::V1::Profiles do
 
           expect(response.success).to be(true)
           expect(response.request_id).to eq("1665653705777672218-fe461586-5782-44")
-          expect(response.status).to eq(201)
+          expect(response.http_status).to eq(201)
           expect(response.message).to eq("Your task was successfully submitted.")
         end
       end
@@ -104,7 +104,7 @@ RSpec.describe Datashake::ReviewIndex::V1::Profiles do
                 .fetch
             expect(response.success).to be(true)
             expect(response.request_id).to eq("1665750168672972530-0968a08d-b733-40")
-            expect(response.status).to eq(201)
+            expect(response.http_status).to eq(201)
             expect(response.credits_used).to be_nil
             expect(response.details).to be_nil
             expect(response.message).to eq("Your task was successfully submitted.")

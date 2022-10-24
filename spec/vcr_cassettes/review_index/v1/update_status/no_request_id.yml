@@ -1,0 +1,34 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://reviewindexapi.datashake.com/update/status?api_key=abcdef
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Fri, 21 Oct 2022 14:36:03 GMT
+      content-type:
+      - application/json
+      content-length:
+      - '180'
+      connection:
+      - keep-alive
+      strict-transport-security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"message":"Bad request","request_id":"1666362963457127507-4d644f8f-7a83-4e","credits_used":0,"details":"Invalid
+        value for request_id: field required","request":{}}'
+  recorded_at: Fri, 21 Oct 2022 14:36:03 GMT
+recorded_with: VCR 6.1.0

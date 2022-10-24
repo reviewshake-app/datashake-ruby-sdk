@@ -39,6 +39,10 @@ module Datashake
         v1.reviews
       end
 
+      def update_status
+        v1.update_status
+      end
+
       private
 
       attr_reader :adapter, :timeout, :open_timeout

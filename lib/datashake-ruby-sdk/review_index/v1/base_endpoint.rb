@@ -22,7 +22,11 @@ module Datashake
         def fetch
           response = version.fetch(method: :get, path: endpoint_path, params: params)
 
-          Datashake::ReviewIndex::V1::Response.new(response)
+          response_class.new(response)
+        end
+
+        def response_class
+          raise NotImplementedError, "Implement it in a successor class"
         end
 
         def endpoint_path

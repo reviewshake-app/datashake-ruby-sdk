@@ -10,7 +10,7 @@ module Datashake
 
         attribute :success, Datashake::Types::Strict::Bool
         attribute? :request_id, Datashake::Types::Strict::String
-        attribute :status, Datashake::Types::Strict::Integer
+        attribute :http_status, Datashake::Types::Strict::Integer
         attribute :message, Datashake::Types::Strict::String
         attribute? :credits_used, Datashake::Types::Strict::Integer
         attribute? :details, Datashake::Types::Strict::String
