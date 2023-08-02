@@ -60,6 +60,12 @@ module Datashake
             self
           end
 
+          def priority_job(bool)
+            @params[:priority_job] = bool
+
+            self
+          end
+
           def fetch
             response = version.fetch(method: :post, path: PATH, params: params)
 
