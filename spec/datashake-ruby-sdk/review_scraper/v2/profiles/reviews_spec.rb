@@ -24,7 +24,9 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Reviews do
       expect(response.source_name).to eq("google")
       expect(response.place_id).to eq("ChIJPVwsIAJZwokRZwG7oezgams")
       expect(response.external_identifier).to be_nil
-      expect(response.meta_data).to eq({"address" => "89 E 42nd St, New York, NY 10017", "name" => "Cafe Grumpy - Grand Central Terminal"})
+      expect(response.meta_data).to eq(
+        {"address" => "89 E 42nd St, New York, NY 10017", "name" => "Cafe Grumpy - Grand Central Terminal", "datashake_review_uuid" => "3288163d-9ea6-3335-ab24-21dec1b6bd44"}
+      )
       expect(response.unique_id).to eq("ChIJPVwsIAJZwokRZwG7oezgams")
       expect(response.review_count).to eq(550)
       expect(response.average_rating).to eq(4.4)
