@@ -7,8 +7,9 @@ module Datashake
     class Client
       BASE_URL = "https://app.datashake.com"
 
-      def initialize(token:, adapter: Faraday.default_adapter, timeout: 30, open_timeout: 30)
+      def initialize(token:, adapter: Faraday.default_adapter, endpoint: nil, timeout: 30, open_timeout: 30)
         @token = token
+        @base_url = endpoint || BASE_URL
         @adapter = adapter
         @timeout = timeout
         @open_timeout = open_timeout
@@ -17,7 +18,7 @@ module Datashake
       def connection
         @connection ||= Faraday.new do |conn|
           conn.headers = {"spiderman-token" => token}
-          conn.url_prefix = BASE_URL
+          conn.url_prefix = base_url
           conn.request(:json)
           conn.response(:json, content_type: "application/json")
           conn.options.timeout = timeout
@@ -60,7 +61,7 @@ module Datashake
 
       private
 
-      attr_reader :token, :adapter, :timeout, :open_timeout
+      attr_reader :token, :adapter, :timeout, :open_timeout, :base_url
     end
   end
 end

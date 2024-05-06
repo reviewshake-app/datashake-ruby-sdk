@@ -3,7 +3,25 @@
 require "spec_helper"
 
 RSpec.describe Datashake::ReviewScraper::Client do
-  subject { described_class.new(token: "abc") }
+  subject { described_class.new(token: "abc", endpoint: endpoint) }
+
+  let(:endpoint) { nil }
+
+  describe "#connection" do
+    context "when endpoint is provided" do
+      let(:endpoint) { "https://custom.endpoint.com" }
+
+      it "uses the provided endpoint as the base_url" do
+        expect(subject.connection.url_prefix.to_s).to eq("#{endpoint}/")
+      end
+    end
+
+    context "when endpoint is not provided" do
+      it "uses the default BASE_URL as the base_url" do
+        expect(subject.connection.url_prefix.to_s).to eq("#{Datashake::ReviewScraper::Client::BASE_URL}/")
+      end
+    end
+  end
 
   describe "#profiles" do
     specify do
