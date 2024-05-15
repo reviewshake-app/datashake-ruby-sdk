@@ -10,7 +10,7 @@ module Datashake
 
         attribute :success, Datashake::Types::Strict::Bool
         attribute :status, Datashake::Types::Strict::Integer
-        attribute :job_id, Datashake::Types::Strict::Integer
+        attribute :job_id, Datashake::Types::Strict::String
         attribute :source_url, Datashake::Types::Strict::String
         attribute :source_name, Datashake::Types::Strict::String
         attribute :place_id, Datashake::Types::Strict::String.optional

@@ -9,7 +9,7 @@ module Datashake
         transform_keys(&:to_sym)
 
         attribute :success, Datashake::Types::Strict::Bool
-        attribute :job_id, Datashake::Types::Strict::Integer
+        attribute :job_id, Datashake::Types::Strict::String
         attribute :status, Datashake::Types::Strict::Integer
         attribute :message, Datashake::Types::Strict::String
 

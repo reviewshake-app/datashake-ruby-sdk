@@ -8,7 +8,7 @@ module Datashake
       class JobInstance < ::Dry::Struct
         transform_keys(&:to_sym)
 
-        attribute :job_id, Datashake::Types::Strict::Integer
+        attribute :job_id, Datashake::Types::Strict::String
         attribute :url, Datashake::Types::Strict::String
         attribute? :place_id, Datashake::Types::Strict::String.optional
         attribute :status, Datashake::Types::Strict::String # Enum
