@@ -26,7 +26,6 @@ Gem::Specification.new do |spec|
     end
   end
 
-  # spec.add_dependency "example-gem", "~> 1.0"
-  spec.add_dependency "dry-struct", "~>1.0"
-  spec.add_dependency "faraday", "~> 2.2"
+  spec.add_dependency "dry-struct", "~> 1"
+  spec.add_dependency "faraday", "~> 2"
 end
