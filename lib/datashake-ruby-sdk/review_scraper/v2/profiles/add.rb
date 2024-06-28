@@ -66,6 +66,12 @@ module Datashake
             self
           end
 
+          def force_crawl(bool)
+            @params[:force_crawl] = bool
+
+            self
+          end
+
           def fetch
             response = version.fetch(method: :post, path: PATH, params: params)
 

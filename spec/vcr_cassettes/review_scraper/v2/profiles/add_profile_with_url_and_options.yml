@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://app.datashake.com/api/v2/profiles/add?blocks=50&callback=https%3A%2F%2Fapp.reviewcompany.com%2Fdatashake_callback&diff=346998052&external_identifier=qwerty123&from_date=2022-02-01&priority_job=true&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB003YH9MMI
+    uri: https://app.datashake.com/api/v2/profiles/add?blocks=50&callback=https%3A%2F%2Fapp.reviewcompany.com%2Fdatashake_callback&diff=346998052&external_identifier=qwerty123&force_crawl=true&from_date=2022-02-01&priority_job=true&url=https%3A%2F%2Fwww.amazon.com%2Fdp%2FB003YH9MMI
     body:
       encoding: US-ASCII
       string: ''

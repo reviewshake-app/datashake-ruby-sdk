@@ -103,6 +103,7 @@ RSpec.describe Datashake::ReviewScraper::V2::Profiles::Add do
             .callback("https://app.reviewcompany.com/datashake_callback")
             .external_identifier("qwerty123")
             .priority_job(true)
+            .force_crawl(true)
             .fetch
 
           expect(response.success).to be(true)
