@@ -33,7 +33,7 @@ module Datashake
 
         body = response.body
 
-        raise Datashake::ReviewScraper::V2::Error.new("Server error", 500) if response.status >= 500
+        raise Datashake::ReviewScraper::V2::Error.new("Server error", response.status) if response.status >= 500
 
         return body if body.is_a?(Array)
         return body if body["status"].is_a?(String)
